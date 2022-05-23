@@ -39,6 +39,19 @@
                     </div>
                 @enderror
 
+                <label for="category_id">Seleziona la categoria: </label>
+                <select name="category_id" id="category_id" class="form-control mb-3">
+                    <option value="">Seleziona la categoria</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                    @endforeach
+                </select>
+                @error('category_id')
+                    <div class="alert alert-danger mt-3" role="alert">
+                        {{ $message }}
+                    </div>
+                @enderror
+
                 <label for="content">Inserisci il contenuto: </label>
                 <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{ old('content') }}</textarea>
                 @error('content')

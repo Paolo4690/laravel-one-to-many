@@ -13,6 +13,35 @@
         </div>
         <div class="row">
             <div class="col">
+
+                <form action="" method="GET">
+                    <div class="form-group">
+                        <label class="text-white" for="title">Filtri:</label>
+                        <input type="text" name="searchTitle" placeholder="Cerca per titolo" class="form-control" id="title"  value="{{ request()->searchTitle }}">
+
+                        <select name="category" id="category" class="form-control">
+                            <option value="" selected>Seleziona una categoria</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{ request()->category == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @if (route('admin.posts.index'))
+                            <select name="author" id="author" class="form-control">
+                                <option value="" selected>Seleziona un autore</option>
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}" {{ request()->author == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        @endif
+
+
+                    </div>
+
+                    <button class="btn btn-primary my-3">Applica filtri</button>
+                </form>
+
+
                 <table class="table table-dark table-hover border border-white">
                     <thead>
                         <tr>

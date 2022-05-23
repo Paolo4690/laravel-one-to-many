@@ -11,7 +11,7 @@ class Post extends Model
     {
         return 'slug';
     }
-    protected $fillable = ['title', 'image', 'content', 'slug', 'user_id'];
+    protected $fillable = ['title', 'image', 'content', 'slug', 'user_id', 'category_id'];
 
     public static function generateSlug($title)
     {
@@ -28,6 +28,10 @@ class Post extends Model
 
     public function user() {
         return $this->belongsTo('App\User');
+    }
+
+    public function category() {
+        return $this->belongsTo('App\Category');
     }
 
 }

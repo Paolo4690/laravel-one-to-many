@@ -15,11 +15,6 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Visualizza tutti i post</a>
                     @endguest
                 </li>
-                @auth
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('admin.posts.myindex') }}">Gestisci i tuoi post</a>
-                    </li>
-                @endauth
             </ul>
 
 

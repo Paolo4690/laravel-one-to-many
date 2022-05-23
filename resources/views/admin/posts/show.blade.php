@@ -7,7 +7,10 @@
         <div class="mt-5 d-flex justify-content-between align-items-center text-white">
             <div class="mb-3">
                 <h1>{{ $post->title }}</h1>
-                <strong>{{ $post->user->name }}</strong> - <strong>{{ $post->user->userInfo->phone }}</strong>
+                <strong>{{ $post->user->name }}</strong> - -
+                <strong>{{ $post->user->userInfo->phone }}</strong>
+                <br>
+                <strong>{{ $post->category->name }}</strong>
             </div>
             <a href="{{ route('admin.posts.index') }}" class="btn btn-success float-right">Torna alla lista</a>
         </div>
