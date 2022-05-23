@@ -48,6 +48,7 @@
                         <th class="text-center" scope="col">#</th>
                         <th class="text-center" scope="col">Title</th>
                         <th class="text-center" scope="col">Slug</th>
+                        <th class="text-center" scope="col">Category</th>
                         <th class="text-center" scope="col">Created At</th>
                         <th class="text-center" scope="col">Updated At</th>
                         <th class="text-center" scope="col" colspan="3">Actions</th>
@@ -59,6 +60,7 @@
                                 <th class="text-center" scope="row">{{ $item->id }}</th>
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->slug }}</td>
+                                <td>{{ $item->category->name }}</td>
                                 <td>{{ date('d/m/Y', strtotime($item->created_at)) }}</td>
                                 <td>{{ date('d/m/Y', strtotime($item->updated_at)) }}</td>
                                 <td>
